@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
-    state = {  } 
+    state = { counter: 0 }; 
+    handleIncrement = () => {
+        console.log("handle increment");
+        this.setState({counter: this.state.counter++});
+    };
     render() { 
         return (
            <div>
-            Counter
-           </div> 
+            <h1>{this.state.counter}</h1>
+            <button onClick={this.handleIncrement}>+ Add</button>
+           </div>
         );
     }
 }
